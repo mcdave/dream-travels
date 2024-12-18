@@ -6,6 +6,7 @@ import { filterTrips } from "@/lib/utils";
 import { Params } from "next/dist/server/request/params";
 import { SearchParams } from "next/dist/server/request/search-params";
 import Navbar from "@/components/Navbar";
+import CountdownWrapper from "@/components/CountdownWrapper";
 
 export default async function Home(props: {
   params: Params;
@@ -28,6 +29,8 @@ export default async function Home(props: {
       <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
         <main className="flex flex-col gap-8 row-start-2 items-center max-w-screen-lg w-full">
           <Hero query={query} />
+
+          <CountdownWrapper travels={filteredTravels} />
 
           <TripList />
         </main>
